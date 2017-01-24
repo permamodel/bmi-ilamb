@@ -1,20 +1,13 @@
 """Run an ILAMB experiment."""
 
 import os
+import sys
 import subprocess
+import argparse
 from .. import ILAMB_ROOT
 
 
-def main():
-    import argparse
-
-    try:
-        os.environ['ILAMB_ROOT']
-    except KeyError:
-        os.environ['ILAMB_ROOT'] = ILAMB_ROOT
-
-    os.environ['MPLBACKEND'] = 'Agg'
-        
+def parse_arguments(args):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('config_file', help='ILAMB configuration file')
     parser.add_argument('--models-dir',
@@ -29,7 +22,18 @@ def main():
     parser.add_argument('--wmt-executor',
                         default='/home/csdms/wmt/_testing',
                         help='path to WMT executor')
-    args = parser.parse_args()
+    return parser.parse_args(args)
+
+
+def main():
+    try:
+        os.environ['ILAMB_ROOT']
+    except KeyError:
+        os.environ['ILAMB_ROOT'] = ILAMB_ROOT
+
+    os.environ['MPLBACKEND'] = 'Agg'
+
+    args = parse_arguments(sys.argv[1:])
 
     driver = os.path.join(args.wmt_executor, 'opt', 'ilamb', 'demo', 'driver.py')
 
