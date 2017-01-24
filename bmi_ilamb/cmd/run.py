@@ -1,4 +1,4 @@
-"""Run an ILAMB experiment."""
+"""Runs an ILAMB (v2) experiment."""
 
 import os
 import sys
@@ -9,10 +9,10 @@ from .. import ILAMB_ROOT
 
 def parse_arguments(args):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('config_file', help='ILAMB configuration file')
+    parser.add_argument('config_file', help='ILAMB configuration (.cfg) file')
     parser.add_argument('--models-dir',
                         default=os.path.join(os.environ['ILAMB_ROOT'], 'MODELS'),
-                        help='path to model output')
+                        help='path to CMIP5-compatible model outputs')
     parser.add_argument('--output-dir',
                         default='ILAMB-output',
                         help='output directory')
