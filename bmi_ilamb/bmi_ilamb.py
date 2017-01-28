@@ -16,7 +16,7 @@ class BmiIlamb(object):
         return [self._command] + (self._args or [])
 
     def get_component_name(self):
-        return 'ILAMB v2'
+        return 'ILAMB'
 
     def initialize(self, filename):
         self._args = [filename or 'ilamb.cfg']
