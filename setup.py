@@ -11,11 +11,6 @@ setup(name='bmi-ilamb',
       author='Mark Piper',
       author_email='mark.piper@colorado.edu',
       packages=find_packages(exclude=['*.tests']),
-      entry_points={
-          'console_scripts': [
-              'ilamb2-run=bmi_ilamb.cmd.run:main',
-          ],
-      },
       keywords='CSDMS BMI ILAMB model benchmark',
       classifiers=[
           'Development Status :: 3 - Alpha',
