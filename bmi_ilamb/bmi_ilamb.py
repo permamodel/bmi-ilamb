@@ -1,9 +1,10 @@
 #! /usr/bin/env python
 import sys
 import subprocess
+from basic_modeling_interface import Bmi
 
 
-class BmiIlamb(object):
+class BmiIlamb(Bmi):
     _command = 'ilamb-run'
     _args = None
     _env = None
