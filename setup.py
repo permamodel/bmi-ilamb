@@ -12,6 +12,7 @@ setup(name='bmi-ilamb',
       author_email='mark.piper@colorado.edu',
       packages=find_packages(exclude=['*.tests']),
       package_data={'': ['data/*']},
+      install_requires=['pyyaml', 'basic-modeling-interface'],
       keywords='CSDMS BMI ILAMB model benchmark',
       classifiers=[
           'Development Status :: 3 - Alpha',
