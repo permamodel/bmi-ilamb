@@ -11,6 +11,7 @@ setup(name='bmi-ilamb',
       author='Mark Piper',
       author_email='mark.piper@colorado.edu',
       packages=find_packages(exclude=['*.tests']),
+      package_data={'': ['data/*']},
       keywords='CSDMS BMI ILAMB model benchmark',
       classifiers=[
           'Development Status :: 3 - Alpha',
