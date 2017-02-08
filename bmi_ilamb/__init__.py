@@ -1,8 +1,9 @@
 import os
 from .bmi_ilamb import BmiIlamb
+from .config import Configuration
 
 
-__all__ = ['BmiIlamb']
+__all__ = ['BmiIlamb', 'Configuration']
 __version__ = 0.1
 
 package_dir = os.path.dirname(__file__)
