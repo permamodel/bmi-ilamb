@@ -1,32 +1,40 @@
-#! /usr/bin/env python
-import sys
+"""Basic Model Interface (BMI) for the ILAMB benchmarking system."""
+
+import os
 import subprocess
+from basic_modeling_interface import Bmi
+from .config import Configuration
 
 
-class BmiIlamb(object):
-    _command = 'ilamb2-run'
+class BmiIlamb(Bmi):
+    _component_name = 'ILAMB'
+    _command = 'ilamb-run'
     _args = None
-    _env = None
 
     def __init__(self):
         self._time = self.get_start_time()
+        self.config = Configuration()
 
     @property
     def args(self):
         return [self._command] + (self._args or [])
 
     def get_component_name(self):
-        return 'ILAMB v2'
+        return self._component_name
 
     def initialize(self, filename):
-        self._args = [filename or 'ilamb.cfg']
+        self.config.load(filename)
+        os.environ['ILAMB_ROOT'] = self.config.get_ilamb_root()
+        os.environ['MPLBACKEND'] = 'Agg'
+        self._args = self.config.get_arguments()
 
     def update(self):
-        subprocess.check_call(self.args, shell=False, env=self._env)
+        with open('stdout', 'w') as fp:
+            subprocess.check_call(self.args, stdout=fp)
         self._time = self.get_end_time()
 
     def update_until(self, time):
-        self.update(time)
+        self.update()
 
     def finalize(self):
         pass
