@@ -23,7 +23,10 @@ before_install:
   - conda install python=$TRAVIS_PYTHON_VERSION
   - conda install nose
   - pip install basic-modeling-interface pyyaml
+  - pip install coveralls
 install:
   - python setup.py install
 script:
-  - nosetests
+  - nosetests --with-doctest --with-coverage --cover-package=bmi_ilamb
+after_success:
+  - coveralls --verbose
