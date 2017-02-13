@@ -1,0 +1,7 @@
+name: ILAMB
+language: python
+package: bmi_ilamb
+class: BmiIlamb
+initialize_args:
+  - bmi_ilamb.yaml
+  - ilamb.cfg
