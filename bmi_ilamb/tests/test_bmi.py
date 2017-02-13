@@ -3,6 +3,7 @@
 import os
 from nose.tools import raises, assert_is, assert_equal, assert_true
 from bmi_ilamb import BmiIlamb
+from . import ilamb_is_installed
 from .. import data_dir
 
 
@@ -83,12 +84,14 @@ def test_finalize():
 def test_update():
     component = BmiIlamb()
     component.initialize(bmi_ilamb_config)
-    component.update()
+    if ilamb_is_installed():
+        component.update()
     component.finalize()
 
 
 def test_update_until():
     component = BmiIlamb()
     component.initialize(bmi_ilamb_config)
-    component.update_until(10.0)
+    if ilamb_is_installed():
+        component.update_until(10.0)
     component.finalize()

@@ -1,0 +1,4 @@
+ignore-patterns:
+  - setup.py
+strictness: medium
+doc-warnings: True

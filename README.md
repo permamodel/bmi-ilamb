@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/permamodel/bmi-ilamb.svg?branch=master)](https://travis-ci.org/permamodel/bmi-ilamb)
+[![Code Health](https://landscape.io/github/permamodel/bmi-ilamb/master/landscape.svg?style=flat)](https://landscape.io/github/permamodel/bmi-ilamb/master)
+[![Coverage Status](https://coveralls.io/repos/permamodel/bmi-ilamb/badge.svg?branch=master)](https://coveralls.io/r/permamodel/bmi-ilamb?branch=master)
+
 # bmi-ilamb
 
 A Basic Model Interface (BMI)
