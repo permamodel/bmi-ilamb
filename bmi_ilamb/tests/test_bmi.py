@@ -92,6 +92,5 @@ def test_update():
 def test_update_until():
     component = BmiIlamb()
     component.initialize(bmi_ilamb_config)
-    if ilamb_is_installed():
-        component.update_until(10.0)
+    component.update_until(10.0)
     component.finalize()
