@@ -29,8 +29,10 @@ class BmiIlamb(Bmi):
         self._args = self.config.get_arguments()
 
     def update(self):
-        with open('stdout', 'w') as fp:
-            subprocess.check_call(self.args, stdout=fp)
+        with open('log', 'w') as fp:
+            subprocess.check_call(self.args,
+                                  stdout=fp,
+                                  stderr=subprocess.STDOUT)
         self._time = self.get_end_time()
 
     def update_until(self, time):
