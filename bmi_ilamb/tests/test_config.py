@@ -1,5 +1,5 @@
 import os
-from nose.tools import (raises, assert_equal, assert_is,
+from nose.tools import (raises, assert_equal, assert_is, assert_true,
                         assert_is_instance, assert_is_none)
 from ..config import Configuration
 from .. import data_dir
@@ -41,6 +41,14 @@ def test_get_ilamb_root():
     x.load(bmi_ilamb_config)
     r = x.get_ilamb_root()
     assert_is(type(r), str)
+
+
+def test_set_model_root():
+    x = Configuration()
+    x.load(bmi_ilamb_config)
+    x._set_model_root()
+    r = x._config['model_root']
+    assert_true(os.path.isabs(r))
 
 
 def test_get_arguments_returns_list_before_load():

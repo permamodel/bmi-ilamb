@@ -1,4 +1,11 @@
+# A sample configuration file for the ILAMB BMI.
+#
+# config         path to ILAMB config file
+# ilamb_root     where benchmarks and model outputs are located
+# model_root     location of model outputs, relative to ilamb_root
+# regions        regions over which analysis is performed
+
 config: /home/csdms/wmt/_testing/opt/bmi-ilamb/bmi_ilamb/data/ilamb.cfg
 ilamb_root: /nas/data/ILAMB_sample
-model_root: /nas/data/ILAMB_sample/MODELS
+model_root: MODELS  # relative to ilamb_root
 regions: global
