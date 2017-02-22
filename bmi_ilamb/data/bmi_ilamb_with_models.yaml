@@ -11,3 +11,5 @@ ilamb_root: /nas/data/ILAMB_sample
 model_root: MODELS  # relative to ilamb_root
 regions: global
 models:
+  - CLM40cn
+  - NorESM1-ME

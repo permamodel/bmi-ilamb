@@ -69,3 +69,18 @@ def test_get_arguments():
     x.load(bmi_ilamb_config)
     r = x.get_arguments()
     assert_equal(len(r), 6)
+
+
+def test_get_arguments_no_models():
+    x = Configuration()
+    x.load(bmi_ilamb_config)
+    r = x.get_arguments()
+    assert_equal(len(r), 6)
+
+
+def test_get_arguments_with_models():
+    x = Configuration()
+    cfg = os.path.join(data_dir, 'bmi_ilamb_with_models.yaml')
+    x.load(cfg)
+    r = x.get_arguments()
+    assert_equal(len(r), 8)
