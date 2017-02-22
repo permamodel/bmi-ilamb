@@ -6,6 +6,7 @@ import yaml
 
 ilamb_root_key = 'ilamb_root'
 model_root_key = 'model_root'
+models_key = 'models'
 
 
 class Configuration(object):
@@ -25,11 +26,17 @@ class Configuration(object):
         if rel is not None:
             self._config[model_root_key] = join(self.get_ilamb_root(), rel)
 
+    def _deserialize_models(self):
+        models = self._config.get(models_key)
+        if models is not None:
+            self._config[models_key] = ' '.join(models)
+
     def get_arguments(self):
         args = []
         self._set_model_root()
+        self._deserialize_models()
         for k, v in self._config.iteritems():
-            if k != ilamb_root_key:
+            if (k != ilamb_root_key) and (v is not None):
                 args.append('--' + k)
                 args.append(v)
         return args
