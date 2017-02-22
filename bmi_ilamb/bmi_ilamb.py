@@ -65,3 +65,7 @@ class BmiIlamb(Bmi):
 
     def get_time_units(self):
         return 's'
+
+    def __str__(self):
+        s = ' '.join(self.args)
+        return s

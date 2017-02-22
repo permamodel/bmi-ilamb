@@ -95,3 +95,10 @@ def test_update_until():
     if ilamb_is_installed():
         component.update_until(10.0)
     component.finalize()
+
+
+def test_str():
+    component = BmiIlamb()
+    component.initialize(bmi_ilamb_config)
+    s = str(component)
+    assert_is(type(s), str)
