@@ -70,14 +70,14 @@ def test_get_arguments():
     x = Configuration()
     x.load(bmi_ilamb_config)
     r = x.get_arguments()
-    assert_equal(len(r), 6)
+    assert_equal(len(r), 4)
 
 
 def test_get_arguments_no_models():
     x = Configuration()
     x.load(bmi_ilamb_config)
     r = x.get_arguments()
-    assert_equal(len(r), 6)
+    assert_equal(len(r), 4)
 
 
 def test_get_arguments_with_models():
@@ -85,14 +85,14 @@ def test_get_arguments_with_models():
     cfg = os.path.join(data_dir, 'bmi_ilamb_with_models.yaml')
     x.load(cfg)
     r = x.get_arguments()
-    assert_equal(len(r), 8)
+    assert_equal(len(r), 6)
 
 
 def test_get_arguments_no_confrontations():
     x = Configuration()
     x.load(bmi_ilamb_config)
     r = x.get_arguments()
-    assert_equal(len(r), 6)
+    assert_equal(len(r), 4)
 
 
 def test_get_arguments_with_confrontations():
@@ -100,4 +100,19 @@ def test_get_arguments_with_confrontations():
     cfg = os.path.join(data_dir, 'bmi_ilamb_with_confrontations.yaml')
     x.load(cfg)
     r = x.get_arguments()
-    assert_equal(len(r), 10)
+    assert_equal(len(r), 8)
+
+
+def test_get_arguments_no_regions():
+    x = Configuration()
+    x.load(bmi_ilamb_config)
+    r = x.get_arguments()
+    assert_equal(len(r), 4)
+
+
+def test_get_arguments_with_regions():
+    x = Configuration()
+    cfg = os.path.join(data_dir, 'bmi_ilamb_with_regions.yaml')
+    x.load(cfg)
+    r = x.get_arguments()
+    assert_equal(len(r), 6)
