@@ -7,6 +7,7 @@ import yaml
 ilamb_root_key = 'ilamb_root'
 model_root_key = 'model_root'
 models_key = 'models'
+confrontations_key = 'confrontations'
 
 
 class Configuration(object):
@@ -31,10 +32,16 @@ class Configuration(object):
         if models is not None:
             self._config[models_key] = ' '.join(models)
 
+    def _deserialize_confrontations(self):
+        clash = self._config.get(confrontations_key)
+        if clash is not None:
+            self._config[confrontations_key] = ' '.join(clash)
+
     def get_arguments(self):
         args = []
         self._set_model_root()
         self._deserialize_models()
+        self._deserialize_confrontations()
         for k, v in self._config.iteritems():
             if (k != ilamb_root_key) and (v is not None):
                 args.append('--' + k)
