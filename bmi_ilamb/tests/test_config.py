@@ -15,6 +15,11 @@ def test_configuration_instantiates():
     assert_is_instance(x, Configuration)
 
 
+def test_configuration_instantiates_with_filename():
+    x = Configuration(bmi_ilamb_config)
+    assert_is_instance(x, Configuration)
+
+
 @raises(TypeError)
 def test_load_fails_with_no_argument():
     x = Configuration()

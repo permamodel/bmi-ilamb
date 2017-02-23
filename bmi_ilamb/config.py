@@ -12,8 +12,10 @@ confrontations_key = 'confrontations'
 
 class Configuration(object):
 
-    def __init__(self):
+    def __init__(self, filename=None):
         self._config = {}
+        if filename is not None:
+            self.load(filename)
 
     def load(self, filename):
         with open(filename, 'r') as fp:
