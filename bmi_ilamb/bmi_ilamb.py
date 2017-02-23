@@ -1,4 +1,4 @@
-"""Basic Model Interface (BMI) for the ILAMB benchmarking system."""
+"""Defines the primary class for the ILAMB BMI."""
 
 import os
 import subprocess
@@ -7,6 +7,7 @@ from .config import Configuration
 
 
 class BmiIlamb(Bmi):
+
     _component_name = 'ILAMB'
     _command = 'ilamb-run'
     _args = None

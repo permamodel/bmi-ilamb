@@ -1,3 +1,5 @@
+"""Basic Model Interface (BMI) for the ILAMB benchmarking system."""
+
 import os
 from .bmi_ilamb import BmiIlamb
 from .config import Configuration

@@ -1,3 +1,5 @@
+"""Unit tests for the bmi_ilamb.config.Configuration class."""
+
 import os
 from nose.tools import (raises, assert_equal, assert_is, assert_true,
                         assert_is_instance, assert_is_none)
