@@ -90,7 +90,7 @@ def test_get_arguments_with_models():
     cfg = os.path.join(data_dir, 'bmi_ilamb_with_models.yaml')
     x.load(cfg)
     r = x.get_arguments()
-    assert_equal(len(r), 6)
+    assert_equal(len(r), 7)
 
 
 def test_get_arguments_no_confrontations():

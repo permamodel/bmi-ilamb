@@ -29,23 +29,11 @@ class Configuration(object):
         if rel is not None:
             self._config[model_root_key] = join(self.get_ilamb_root(), rel)
 
-    def _deserialize_models(self):
-        models = self._config.get(models_key)
-        if models is not None:
-            self._config[models_key] = ' '.join(models)
-
-    def _deserialize_confrontations(self):
-        clash = self._config.get(confrontations_key)
-        if clash is not None:
-            self._config[confrontations_key] = ' '.join(clash)
-
     def get_arguments(self):
         args = []
         self._set_model_root()
-        self._deserialize_models()
-        self._deserialize_confrontations()
         for k, v in self._config.iteritems():
             if (k != ilamb_root_key) and (v is not None):
                 args.append('--' + k)
-                args.append(v)
+                args.extend([v] if type(v) == str else v)
         return args
