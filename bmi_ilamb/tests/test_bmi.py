@@ -66,7 +66,7 @@ def test_initialize():
 def test_initialize_n_arguments():
     component = BmiIlamb()
     component.initialize(bmi_ilamb_config)
-    assert_equal(len(component.args), 7)
+    assert_equal(len(component.args), 5)
 
 
 def test_initialize_sets_env_vars():
@@ -95,3 +95,10 @@ def test_update_until():
     if ilamb_is_installed():
         component.update_until(10.0)
     component.finalize()
+
+
+def test_str():
+    component = BmiIlamb()
+    component.initialize(bmi_ilamb_config)
+    s = str(component)
+    assert_is(type(s), str)

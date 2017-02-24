@@ -90,3 +90,7 @@ ENV/
 
 # Emacs backup files
 *~
+
+# ILAMB build directory and log file
+log
+_build
