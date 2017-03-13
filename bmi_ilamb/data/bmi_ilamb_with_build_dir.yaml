@@ -11,9 +11,7 @@
 config: /home/csdms/wmt/_testing/opt/bmi-ilamb/bmi_ilamb/data/ilamb.cfg
 ilamb_root: /nas/data/ILAMB_sample
 model_root: MODELS  # relative to ilamb_root
-build_dir:
+build_dir: __build_dir__
 regions:
 models:
-  - CLM40cn
 confrontations:
-  - ConfNBP
