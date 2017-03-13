@@ -121,3 +121,18 @@ def test_get_arguments_with_regions():
     x.load(cfg)
     r = x.get_arguments()
     assert_equal(len(r), 6)
+
+
+def test_get_arguments_no_build_dir():
+    x = Configuration()
+    x.load(bmi_ilamb_config)
+    r = x.get_arguments()
+    assert_equal(len(r), 4)
+
+
+def test_get_arguments_with_build_dir():
+    x = Configuration()
+    cfg = os.path.join(data_dir, 'bmi_ilamb_with_build_dir.yaml')
+    x.load(cfg)
+    r = x.get_arguments()
+    assert_equal(len(r), 6)
