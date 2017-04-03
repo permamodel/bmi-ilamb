@@ -136,3 +136,26 @@ def test_get_arguments_with_build_dir():
     x.load(cfg)
     r = x.get_arguments()
     assert_equal(len(r), 6)
+
+
+def test_get_arguments_no_user_regions():
+    x = Configuration()
+    x.load(bmi_ilamb_config)
+    r = x.get_arguments()
+    assert_equal(len(r), 4)
+
+
+def test_get_arguments_with_netcdf_user_regions():
+    x = Configuration()
+    cfg = os.path.join(data_dir, 'bmi_ilamb_with_custom_regions_nc.yaml')
+    x.load(cfg)
+    r = x.get_arguments()
+    assert_equal(len(r), 10)
+
+
+def test_get_arguments_with_text_user_regions():
+    x = Configuration()
+    cfg = os.path.join(data_dir, 'bmi_ilamb_with_custom_regions_txt.yaml')
+    x.load(cfg)
+    r = x.get_arguments()
+    assert_equal(len(r), 8)
