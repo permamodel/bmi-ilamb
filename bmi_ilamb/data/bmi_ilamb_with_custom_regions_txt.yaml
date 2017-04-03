@@ -13,7 +13,7 @@ config: /home/csdms/wmt/_testing/opt/bmi-ilamb/bmi_ilamb/data/ilamb.cfg
 ilamb_root: /nas/data/ILAMB_sample
 model_root: MODELS  # relative to ilamb_root
 build_dir:
-define_regions:
-regions:
+define_regions: tropics.txt
+regions: tropics
 models:
 confrontations:
