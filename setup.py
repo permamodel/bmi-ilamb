@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
-from bmi_ilamb import __version__
 
 
 setup(name='bmi-ilamb',
-      version=__version__,
+      version=execfile('./bmi_ilamb/version.py'),
       description='BMI for ILAMB',
       long_description=open('README.md').read(),
       url='https://github.com/permamodel/bmi-ilamb',
