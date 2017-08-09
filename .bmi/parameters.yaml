@@ -35,12 +35,10 @@ build_dir:
 
 define_regions:
   description:
-    File defining custom analysis region
+    File (netCDF or text) defining custom analysis region
   value:
-    type: file
-    default: off
-    files:
-      - off
+    type: string
+    default: ''
 
 regions:
   description:
