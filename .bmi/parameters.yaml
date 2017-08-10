@@ -24,7 +24,7 @@ model_root:
     Directory relative to ILAMB_ROOT containing model outputs
   value:
     type: string
-    default: MODELS
+    default: MODELS-by-project/MsTMIP
 
 build_dir:
   description:
