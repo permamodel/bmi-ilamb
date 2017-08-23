@@ -1,0 +1,62 @@
+simulation_name:
+  description:
+    The name of the current simulation
+  value:
+    type: string
+    default: ILAMB
+
+config_file:
+  description:
+    Path to the ILAMB configuration file
+  value:
+    type: string
+    default: ilamb.cfg
+
+ilamb_root:
+  description:
+    Path to the ILAMB benchmark data and model output repository
+  value:
+    type: string
+    default: /nas/data/ilamb
+
+model_root:
+  description:
+    Directory relative to ILAMB_ROOT containing model outputs
+  value:
+    type: string
+    default: MODELS-by-project/MsTMIP
+
+build_dir:
+  description:
+    Name of ILAMB build directory
+  value:
+    type: string
+    default: _build
+
+define_regions:
+  description:
+    File (netCDF or text) defining custom analysis region
+  value:
+    type: string
+    default: ''
+
+regions:
+  description:
+    Geographical regions over which analysis is performed
+  value:
+    type: list
+    default: []
+
+models:
+  description:
+    A list of models to benchmark
+  value:
+    type: list
+    default: []
+
+confrontations:
+  description:
+    A list of confrontations to run
+  value:
+    type: list
+    default: []

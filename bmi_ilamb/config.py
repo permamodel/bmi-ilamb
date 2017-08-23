@@ -33,7 +33,7 @@ class Configuration(object):
         args = []
         self._set_model_root()
         for k, v in self._config.iteritems():
-            if (k != ilamb_root_key) and (v is not None):
+            if (k != ilamb_root_key) and (v is not None) and (len(v) > 0):
                 args.append('--' + k)
                 args.extend([v] if type(v) == str else v)
         return args
