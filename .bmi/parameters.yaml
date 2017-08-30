@@ -1,6 +1,6 @@
 simulation_name:
   description:
-    The name of the current simulation
+    The name of the current benchmarking study
   value:
     type: string
     default: ILAMB
@@ -14,7 +14,7 @@ config_file:
 
 ilamb_root:
   description:
-    Path to the ILAMB benchmark data and model output repository
+    'Path to the ILAMB benchmark data and model output repository (ILAMB_ROOT)'
   value:
     type: string
     default: /nas/data/ilamb
@@ -49,7 +49,7 @@ regions:
 
 models:
   description:
-    A list of models to benchmark
+    A list of CMIP5-compatible models to benchmark
   value:
     type: list
     default: []
