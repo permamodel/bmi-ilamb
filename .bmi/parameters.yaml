@@ -17,7 +17,7 @@ ilamb_root:
     'Path to the ILAMB benchmark data and model output repository (ILAMB_ROOT)'
   value:
     type: string
-    default: /nas/data/ilamb
+    default: /home/csdms/ilamb
 
 model_root:
   description:
