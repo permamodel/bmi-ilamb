@@ -13,7 +13,7 @@ benchmarking toolkit.
   that describes BMI
 * ILAMB [home page](https://www.ilamb.org/)
 * ILAMB [source code repository](https://bitbucket.org/ncollier/ilamb)
-* ILAMB [documentation](http://climate.ornl.gov/~ncf/ILAMB/docs/index.html)
+* ILAMB [documentation](https://ilamb.ornl.gov/doc/)
 
 ## Installation
 
@@ -24,7 +24,7 @@ Clone and install **bmi-ilamb** into a Python distribution with
     $ python setup.py install
 
 ILAMB itself must also be installed;
-follow the [instructions](http://climate.ornl.gov/~ncf/ILAMB/docs/install.html)
+follow the [instructions](https://ilamb.ornl.gov/doc/install.html)
 in the ILAMB documentation
 for downloading and installing ILAMB
 into the same Python distribution as **bmi-ilamb**.
