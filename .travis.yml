@@ -21,12 +21,11 @@ before_install:
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
   - conda install python=$TRAVIS_PYTHON_VERSION
-  - conda install nose
-  - pip install basic-modeling-interface pyyaml
-  - pip install coveralls
+  - conda install pyyaml pytest pytest-cov coveralls
+  - pip install basic-modeling-interface
 install:
   - python setup.py install
 script:
-  - nosetests --with-doctest --with-coverage --cover-package=bmi_ilamb
+  - pytest --cov=bmi_ilamb --cov-report=html --cov-config=setup.cfg
 after_success:
   - coveralls --verbose
