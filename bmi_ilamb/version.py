@@ -1,4 +1,4 @@
 """Set package version."""
 
 # See https://packaging.python.org/guides/single-sourcing-package-version"""
-__version__ = '0.1.2'
+__version__ = '0.1.3'  # pragma: no cover
