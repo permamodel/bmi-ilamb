@@ -15,7 +15,7 @@ setup(name='bmi-ilamb',
       install_requires=['pyyaml', 'basic-modeling-interface'],
       keywords='CSDMS BMI ILAMB model benchmark',
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 5 - Production/Stable',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python :: 2.7',
       ],
